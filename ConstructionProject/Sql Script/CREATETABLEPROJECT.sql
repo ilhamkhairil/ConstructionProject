@@ -1,0 +1,15 @@
+USE construction;
+CREATE TABLE [dbo].[Project]
+(
+Id UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT NEWID(),
+[Name] NVARCHAR(200) NOT NULL,
+[Location] NVARCHAR(500) NOT NULL,
+StageId INT NOT NULL,
+CategoryId INT NOT NULL,
+ConstructionStartDate DATETIME NOT NULL,
+Details_Description NVARCHAR(2000) NOT NULL,
+CreatorID INT NOT NULL,
+CONSTRAINT fk_Project_CreatorID FOREIGN KEY (CreatorID) REFERENCES Creator(ID),
+CONSTRAINT fk_Project_StageId FOREIGN KEY (StageId) REFERENCES Stage(ID),
+CONSTRAINT fk_Project_CategoryId FOREIGN KEY (CategoryId) REFERENCES Category(ID)
+);

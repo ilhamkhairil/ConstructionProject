@@ -1,0 +1,4 @@
+USE construction;
+CREATE TABLE [dbo].[Creator] (ID int IDENTITY(1,1) PRIMARY KEY, CreatorName NVARCHAR(100) NOT NULL);	
+CREATE TABLE [dbo].[Stage] (ID int IDENTITY(1,1) PRIMARY KEY, StageName NVARCHAR(100) NOT NULL);	
+CREATE TABLE [dbo].[Category] (ID int IDENTITY(1,1) PRIMARY KEY, CategoryName NVARCHAR(100) NOT NULL);	
